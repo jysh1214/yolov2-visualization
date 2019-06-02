@@ -21,3 +21,4 @@ python3 vis.py ./cfg/yolov2-voc.cfg yolo-voc.weights
 ```
 
 ## Result
+![vis](https://github.com/jysh1214/yolov2-visualization/blob/master/img/vis.png)
