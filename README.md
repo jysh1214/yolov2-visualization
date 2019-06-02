@@ -1,7 +1,7 @@
 # yolov2-visualization
 yolov2 visualization by pytorch
 
-## Crdit
+## Credit
 [marvis/pytorch-yolo2](https://github.com/marvis/pytorch-yolo2)
 
 ## Prerequisites
