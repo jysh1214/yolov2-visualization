@@ -1,0 +1,5 @@
+train  = ./train/voc_train.txt
+valid  = ./train/2007_test.txt
+names = data/voc.names
+backup = backup
+gpus  = 0,1,2,3
