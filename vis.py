@@ -90,7 +90,7 @@ class CNNLayerVisualization():
             # Save image
             
             if i % 30 == 0:
-                cv2.imwrite('./v2_generated/layer_vis_l' + str(self.selected_layer) +
+                cv2.imwrite('./generated/layer_vis_l' + str(self.selected_layer) +
                             '_f' + str(self.selected_filter) +'.jpg', self.created_image)
             
 
