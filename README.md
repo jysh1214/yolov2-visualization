@@ -12,7 +12,7 @@ pip3 install torch torchvision
 
 ## Download weights
 ```
-https://pjreddie.com/media/files/yolov-voc.weights
+https://pjreddie.com/media/files/yolov2-voc.weights
 ```
 
 ## Use
