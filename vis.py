@@ -16,16 +16,16 @@ from misc_functions import preprocess_image, recreate_image
 
 class CNNLayerVisualization():
     def __init__(self, model, selected_layer, selected_filter):
-            self.model = model
-            self.model.eval()
-            self.selected_layer = selected_layer
-            self.selected_filter = selected_filter
-            self.conv_output = 0
-            # Generate a random image
-            self.created_image = np.uint8(np.random.uniform(150, 180, (224, 224, 3)))
-            # Create the folder to export images if not exists
-            if not os.path.exists('./generated'):
-                os.makedirs('./generated')
+        self.model = model
+        self.model.eval()
+        self.selected_layer = selected_layer
+        self.selected_filter = selected_filter
+        self.conv_output = 0
+        # Generate a random image
+        self.created_image = np.uint8(np.random.uniform(150, 180, (224, 224, 3)))
+        # Create the folder to export images if not exists
+        if not os.path.exists('./generated'):
+            os.makedirs('./generated')
 
 
     def hook_layer(self):
@@ -42,6 +42,8 @@ class CNNLayerVisualization():
         #self.hook_layer()
         # Process image and return variable
         self.processed_image = preprocess_image(self.created_image)
+        cv2.imwrite('./generated/input_l' + str(self.selected_layer) +
+            '_f' + str(self.selected_filter) +'.jpg', self.created_image)
         # Define optimizer for the image
         optimizer = Adam([self.processed_image], lr=0.1, weight_decay=1e-6)
         """
@@ -90,7 +92,7 @@ class CNNLayerVisualization():
             # Save image
             
             if i % 30 == 0:
-                cv2.imwrite('./generated/layer_vis_l' + str(self.selected_layer) +
+                cv2.imwrite('./generated/output_l' + str(self.selected_layer) +
                             '_f' + str(self.selected_filter) +'.jpg', self.created_image)
             
 
